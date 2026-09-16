@@ -1,0 +1,11 @@
+merge_queue:
+  max_parallel_checks: 1
+queue_rules:
+  - name: default
+    batch_size: 1
+    max_checks_retries: 1
+    branch_protection_injection_mode: merge
+    queue_conditions: true
+    merge_conditions:
+      - check-success = vm4-policy-gate-a
+      - check-success = vm4-policy-gate-b
